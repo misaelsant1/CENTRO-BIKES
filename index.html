@@ -222,22 +222,22 @@
   .feat p{color:var(--muted);font-size:14px;line-height:1.7}
 
   /* Services */
-  .services-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:60px}
-  .services-list{display:flex;flex-direction:column;gap:14px}
+  .services-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:60px}
+  .services-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   .svc{
-    display:flex;align-items:center;gap:16px;padding:20px 22px;border-radius:16px;
-    background:var(--card);border:1px solid var(--border);cursor:pointer;
+    display:flex;flex-direction:column;border-radius:16px;
+    background:var(--card);border:1px solid var(--border);cursor:pointer;overflow:hidden;
     transition:transform .25s,border-color .25s,background .25s;
   }
-  .svc:hover{transform:translateX(6px);border-color:rgba(220,38,38,0.4);background:var(--card2)}
-  .svc.active{border-color:var(--accent);background:linear-gradient(90deg,rgba(220,38,38,0.12),transparent)}
-  .svc-num{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--muted2);width:28px}
-  .svc-ico{width:44px;height:44px;border-radius:12px;background:rgba(220,38,38,0.12);display:grid;place-items:center;color:var(--accent)}
-  .svc-ico svg{width:22px;height:22px}
-  .svc-body h4{font-size:16px;font-weight:700;margin-bottom:2px}
-  .svc-body p{font-size:13px;color:var(--muted)}
-  .svc-arrow{margin-left:auto;color:var(--muted2);transition:transform .25s,color .25s}
-  .svc:hover .svc-arrow{transform:translateX(4px);color:var(--accent)}
+  .svc:hover{transform:translateY(-6px);border-color:rgba(220,38,38,0.4);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
+  .svc.active{border-color:var(--accent)}
+  .svc-img{width:100%;height:150px;display:grid;place-items:center;overflow:hidden;border-bottom:1px solid var(--border)}
+  .svc-img svg{width:100%;height:100%}
+  .svc-body{padding:18px 20px}
+  .svc-body h4{font-size:16px;font-weight:700;margin-bottom:6px;font-family:'Space Grotesk',sans-serif}
+  .svc-body p{font-size:13px;color:var(--muted);line-height:1.6}
+  .svc-specs{margin-top:10px;font-size:12px;color:var(--muted2);line-height:1.6}
+  .svc-specs span{display:inline-block;margin-right:8px;padding:3px 8px;border-radius:6px;background:rgba(220,38,38,0.1);color:var(--accent);font-weight:600}
   .services-visual{
     position:relative;border-radius:var(--radius);overflow:hidden;
     background:linear-gradient(135deg,#1c1c28,#0f0f18);border:1px solid var(--border);
@@ -612,43 +612,59 @@
       <div class="services-wrap">
         <div class="services-list stagger">
           <div class="svc active">
-            <span class="svc-num">01</span>
-            <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 9 9h5l3 4.5"/></svg></div>
-            <div class="svc-body"><h4>Venda de bicicletas</h4><p>MTB, speed, urbana, dobrável e infantil. Modelos para todos os perfis e bolsos.</p></div>
-            <svg class="svc-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="svc-img" style="background:radial-gradient(circle at 30% 30%,rgba(220,38,38,0.4),transparent 60%),linear-gradient(135deg,#2a1216,#1a0a0c)">
+              <img src="svc-venda.jpg" alt="servico" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+            <div class="svc-body">
+              <h4>Venda de bicicletas</h4>
+              <p>MTB, speed, urbana, dobrÃ¡vel e infantil. Modelos para todos os perfis e bolsos.</p>
+              <div class="svc-specs"><span>MTB 29"</span><span>Speed 700c</span><span>Urbana</span><span>Kids</span></div>
+            </div>
           </div>
           <div class="svc">
-            <span class="svc-num">02</span>
-            <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-            <div class="svc-body"><h4>Revisão e manutenção</h4><p>Revisão completa, ajuste de freio e câmbio, lubrificação e calibragem.</p></div>
-            <svg class="svc-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="svc-img" style="background:radial-gradient(circle at 30% 30%,rgba(250,204,21,0.4),transparent 60%),linear-gradient(135deg,#2a2410,#1a1608)">
+              <img src="svc-revisao.jpg" alt="servico" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+            <div class="svc-body">
+              <h4>RevisÃ£o e manutenÃ§Ã£o</h4>
+              <p>RevisÃ£o completa, ajuste de freio e cÃ¢mbio, lubrificaÃ§Ã£o e calibragem.</p>
+              <div class="svc-specs"><span>Freio</span><span>CÃ¢mbio</span><span>LubrificaÃ§Ã£o</span></div>
+            </div>
           </div>
           <div class="svc">
-            <span class="svc-num">03</span>
-            <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-            <div class="svc-body"><h4>Troca de peças</h4><p>Pneus, câmaras, correntes, cassetes, pastilhas de freio e muito mais.</p></div>
-            <svg class="svc-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="svc-img" style="background:radial-gradient(circle at 30% 30%,rgba(59,130,246,0.4),transparent 60%),linear-gradient(135deg,#0f1a2e,#08101f)">
+              <img src="svc-pecas.jpg" alt="servico" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+            <div class="svc-body">
+              <h4>Troca de peÃ§as</h4>
+              <p>Pneus, cÃ¢maras, correntes, cassetes, pastilhas de freio e muito mais.</p>
+              <div class="svc-specs"><span>Pneus</span><span>Correntes</span><span>Freios</span></div>
+            </div>
           </div>
           <div class="svc">
-            <span class="svc-num">04</span>
-            <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7z"/></svg></div>
-            <div class="svc-body"><h4>Montagem personalizada</h4><p>Monte sua bike do zero com as peças que você escolher.</p></div>
-            <svg class="svc-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="svc-img" style="background:radial-gradient(circle at 30% 30%,rgba(34,197,94,0.4),transparent 60%),linear-gradient(135deg,#0f2418,#08160f)">
+              <img src="svc-montagem.jpg" alt="servico" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+            <div class="svc-body">
+              <h4>Montagem personalizada</h4>
+              <p>Monte sua bike do zero com as peÃ§as que vocÃª escolher.</p>
+              <div class="svc-specs"><span>Quadro</span><span>Rodas</span><span>Componentes</span></div>
+            </div>
           </div>
           <div class="svc">
-            <span class="svc-num">05</span>
-            <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
-            <div class="svc-body"><h4>Acessórios</h4><p>Capacetes, luzes, cadeados, bombas, ciclocomputadores e vestuário.</p></div>
-            <svg class="svc-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <div class="svc-img" style="background:radial-gradient(circle at 30% 30%,rgba(236,72,153,0.4),transparent 60%),linear-gradient(135deg,#2a1020,#1a0814)">
+              <img src="svc-acessorios.jpg" alt="servico" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+            <div class="svc-body">
+              <h4>AcessÃ³rios</h4>
+              <p>Capacetes, luzes, cadeados, bombas, ciclocomputadores e vestuÃ¡rio.</p>
+              <div class="svc-specs"><span>Capacetes</span><span>Luzes</span><span>Cadeados</span></div>
+            </div>
           </div>
         </div>
         <div class="services-visual reveal-right">
           <span class="tag eyebrow"><span class="dot"></span> Oficina</span>
-          <svg class="big-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/>
-            <path d="M5.5 17.5 9 9h5l3 4.5"/><path d="M9 9 7 5h3"/><path d="M14 9l2 8.5"/>
-            <path d="M80 50" />
-          </svg>
+          <img src="svc-tecnico.jpg" alt="Atendimento técnico" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block">
           <div class="bottom">
             <div>
               <h3>Atendimento técnico</h3>
